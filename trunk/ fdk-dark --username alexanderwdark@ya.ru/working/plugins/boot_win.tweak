@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Windows как ОС по умолчанию
+SECTION>options
+TYPE>INI
+PATH>c:\msdos.sys
+VALUENAME>BootWin
+VALUETYPE>DWORD
+DEFAULT>1
+VALUEON>1
+VALUEOFF>0
+NOTBOOL>0
+OS>9x
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

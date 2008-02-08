@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Отключить автозагрузку
+ROOTKEY>HKCU
+PATH>SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
+VALUENAME>NoDriveTypeAutoRun
+VALUETYPE>BIN
+SIZE>4
+DEFAULT>000000BD
+VALUEON>000000BD
+VALUEOFF>00000095
+NOTBOOL>0
+OS>9x
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

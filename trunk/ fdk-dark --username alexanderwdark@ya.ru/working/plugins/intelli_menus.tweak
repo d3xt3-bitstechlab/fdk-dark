@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Отключить IntelliMenus (Me/2K/XP)
+ROOTKEY>HKLM
+PATH>Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+VALUENAME>IntelliMenus
+VALUETYPE>STRING
+DEFAULT>Yes
+VALUEON>No
+VALUEOFF>Yes
+NOTBOOL>0
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

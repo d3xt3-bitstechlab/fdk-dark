@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Автообновление Agnitium Outpost FireWall
+ROOTKEY>HKLM
+PATH>SOFTWARE\Agnitum\Outpost Firewall\General\AutoUpdate
+VALUENAME>AutoUpdate
+VALUETYPE>DWORD
+DEFAULT>0
+VALUEON>1
+VALUEOFF>0
+NOTBOOL>0
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

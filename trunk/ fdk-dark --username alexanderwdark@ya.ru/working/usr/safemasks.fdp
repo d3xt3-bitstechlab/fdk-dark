@@ -1,0 +1,17 @@
+*.~*
+*.000
+*.1st
+*.bak
+*.chk
+*.dir
+*.diz
+*.err
+*.fts
+*.gid
+*.nu?
+*.old
+*.swp
+*.tmp
+bootlog.*
+suhdlog.*
+*.$$$
