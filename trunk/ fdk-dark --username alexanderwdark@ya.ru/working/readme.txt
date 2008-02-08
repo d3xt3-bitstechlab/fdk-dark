@@ -90,4 +90,6 @@ FDC_SEARCH.DAT - ьюакнм люянй дкъ онхяйю.
 он пюанрняонянамнярх х мюдефмнярх дюммнцн аеяокюрмнцн он.
 
 -------------------------------------------------------------------------------------------
-(C) 2003-2006 DARK SOFTWARE HTTP://WWW.DARKSOFTWARE.NAROD.RU/ DARKSOFTWARE@YA.RU
+(C) 2003-2008 DARK SOFTWARE HTTP://WWW.DARKSOFTWARE.NAROD.RU/ DARKSOFTWARE@YA.RU
+
+
