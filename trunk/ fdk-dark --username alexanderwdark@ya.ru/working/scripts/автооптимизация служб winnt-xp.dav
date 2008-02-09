@@ -1,0 +1,121 @@
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Описание языка Davinchi
+//Запись переменных:
+//В любой части кода, в виде var имя_переменной=значение переменной
+//
+//Типы переменных:
+//String (строка, далее S)
+//Integer (целое число, далее I)
+//Boolean (логическое да-нет, далее B)
+//
+//--------------------------------------------------------------------
+//Встроенные переменные:
+//
+//
+//var _ntserviceauto,_ntservicemanual,_ntservicedisabled : integer (2,3,4) - константы режима запуска службы WinNT/XP
+//var canremovedirectories:boolean=false - разрешить удалять каталоги?
+//см. exclude.fdp для изменения списка исключений
+//var autoexit:boolean=false - выходить из программы по завершению скрипта?
+//---------------------------------------------------------------------
+//
+//Системные переменные
+//Запись: %имя_переменной%
+//%windir% - каталог windows
+//%programfiles% - каталог program files
+//%fdcdir% - каталог FDK
+//
+//----------------------------------------------------------------------
+//Функции
+//В языке есть лишь функции, любая функция возвращает значение
+//Запись в виде: Функция(параметр), если параметра нет, то функция()
+//say(s) -диалог сообщения
+//ask(s)=b -диалог вопроса
+//writeln(s) -вывод строки текста
+//readln=s -ввод строки текста
+//readlnex(s1,s2,s3):s - ввод строки текста, s1-заголовок,s2-комментарий,s3-значение по умолчанию
+//erasethisfiles(s,i,s1,s2..si) - удаляет указанные файлы s1..si в каталоге s с подкаталогами
+//erasethisext(s,i,s1,s2..si) - удаляет файлы с расширениями s1..si в каталоге s 
+//eraseallexcept(s,i,s1,s2..si) - удаляет все файлы в каталоге s кроме s1..si
+//eraseallfiles(s) - удаляет все файлы в каталоге s
+//eraseextbyage(s,s1,i) - удаляет файлы с в каталоге s с расширением s1 и возрастом i в днях
+//regopenrootkey(s) -открыть ветвь реестра: HKLM,HKCU,HKCC,HKCR,HCKU
+//regopenkey(s) - открыть путь реестра
+//regclosekey() - закрыть путь
+//regopenkeya(s) - открыть путь реестра, если путь не существует,создать его
+//regcreatekey(s) - создать путь реестра
+//regdeletekey(s) - удалить ключ реестра
+//regkeyexists(s)=b - существует ли путь?
+//regwritestring(s,s1) - запись строки s1 с именем s в реестр
+//regwritebool(s,b)  - запись boolean в реестр
+//regwriteinteger(s,ш) - запись integer в реестр
+//regreadstring(s)=s - чтение строки из реестра
+//regreadinteger(s)=i - чтение числа из реестра
+//regreadbool(s)=b - чтение boolean из реестра
+//regvalueexists(s)=b - существует ли значение?
+//copyfile(s,s1):b - копировать файл
+//deletefile(s):b - удалить файл
+//fileexists(s):b - существует ли файл
+//extractfilename(s):s -извлечь имя файла без пути
+//extractfilepath(s):s -извлечь путь файла
+//extractfileext(s):s -извлечь расширение файла
+//changefileext(s,s1):s -сменить расширение файла
+//trim(s):s -удалить пробелы с начала и конца строки
+//uppercase(s):s -строку в верхний регистр
+//lowercase(s):s - строку в нижний
+//halt() -срочный выход
+//inc(i,i1):i -увеличить число
+//dec(i,i1):i -уменьшить число
+//mul(i,i1):i -умножить число
+//div(i,i1):i -делить число
+//hidewindow():b -спрятать окно fdk
+//showwindow:b -показать окно fdk
+//startdebug():b -показать окно отладки
+//enddebug():b-убрать окно отладки
+//pos(s1,s2):i -возвращает позицию вхождения строки s1 в s2, если строка не найдена, 0
+//selectelementidx(s1,s2,i,s0,..si-1):i-диалог выбора элементов из списка, s1-заголовок,s1-комментарий,i-число вариантов,далее варианты,возвращает порядковый номер выбранного элемента, начиная с 0
+//selectelement(s1,s2,i,s0,..si-1):s-диалог выбора элементов из списка, s1-заголовок,s1-комментарий,i-число вариантов,далее варианты,возвращает выбранный элемент s
+//exec(s):b-запуск файла s
+//execandwait(s):b-запуск файла s и ожидание завершения его работы
+//setntservicestate(s,i=_ntserviceauto:_ntservicemanual:_ntservicedisabled):b установить режим запуска службы s winnt
+//getntsericestate(s):i=2,3,4 или _ntserviceauto,_ntservicemanual,_ntservicedisabled - получить режим запуска службы winnt
+////////////////////////////////////////////////////////////////////////////////////////
+
+if ask('Внимание! Набор служб зависит о предназначения конкретной системы и режима ее работы. Некорректная манипуляция параметрами может привести к неработоспособности ОС. Проложить?')=false then goto end
+if ask('Скрипт требует определенного уровня подготовки пользователя. Вы выполняете этот скрипт на свой страх и риск. Продолжить?')=false then goto end
+if NT=false then goto l_halt
+//startdebug()
+if ask('Отключить центр обеспечения безопасности?')=true then setntservicestate('wscsvc',_ntservicedisabled)
+if ask('Отключить узел универсальных PnP-устройств?')=true then setntservicestate('upnphost',_ntservicedisabled)
+if ask('Отключить удаленный реестр?')=true then setntservicestate('RemoteRegistry',_ntservicedisabled)
+if ask('Отключить смарт-карты?')=true then setntservicestate('SCardSvr',_ntservicedisabled)
+if ask('Отключить служба сообщений?')=true then setntservicestate('Messenger',_ntservicedisabled)
+if ask('Отключить служба сетевого DDE?')=true then setntservicestate('NetDDE',_ntservicedisabled)
+if ask('Отключить служба обнаружения SSDP?')=true then setntservicestate('SSDPSRV',_ntservicedisabled)
+if ask('Отключить служба индексирования?')=true then setntservicestate('CiSvc',_ntservicedisabled)
+if ask('Отключить служба времени Windows?')=true then setntservicestate('W32Time',_ntservicedisabled)
+if ask('Отключить служба восстановления системы?')=true then setntservicestate('srservice',_ntservicedisabled)
+if ask('Отключить служба COM записи компакт-дисков IMAPI?')=true then setntservicestate('ImapiService',_ntservicedisabled)
+if ask('Отключить сервер папки обмена?')=true then setntservicestate('ClipSrv',_ntservicedisabled)
+if ask('Отключить планировщик заданий?')=true then setntservicestate('Schedule',_ntservicedisabled)
+if ask('Отключить оповещатель?')=true then setntservicestate('Alerter',_ntservicedisabled)
+if ask('Отключить обозреватель компьютеров?')=true then setntservicestate('Browser',_ntservicedisabled)
+if ask('Отключить маршрутизация и удаленный доступ?')=true then setntservicestate('RemoteAccess',_ntservicedisabled)
+if ask('Отключить источник бесперебойного питания?')=true then setntservicestate('UPS',_ntservicedisabled)
+if ask('Отключить доступ к HID-устройствам?')=true then setntservicestate('HidServ',_ntservicedisabled)
+if ask('Отключить диспетчер сетевого DDE?')=true then setntservicestate('NetDDEdsdm',_ntservicedisabled)
+if ask('Отключить диспетчер сеанса справки для удаленного рабочего стола?')=true then setntservicestate('RDSessMgr',_ntservicedisabled)
+if ask('Отключить брандмауэр Windows/Общий доступ к Интернету (ICS)?')=true then setntservicestate('SharedAccess',_ntservicedisabled)
+if ask('Отключить беспроводная настройка?')=true then setntservicestate('WZCSVC',_ntservicedisabled)
+if ask('Отключить автоматическое обновление?')=true then setntservicestate('wuauserv',_ntservicedisabled)
+if ask('Отключить Telnet?')=true then setntservicestate('TlntSvr',_ntservicedisabled)
+if ask('Отключить QoS RSVP?')=true then setntservicestate('RSVP',_ntservicedisabled)
+if ask('Отключить NetMeeting Remote Desktop Sharing?')=true then setntservicestate('mnmsrvc',_ntservicedisabled)
+writeln('Готово!')
+say('При новом запуске ОС службы будут инициализированы согласно новым правилам.')
+goto end
+label l_halt
+say('Этот скрипт не предназначен для Win9x-систем! Выполнение невозможно!')
+label end
+//enddebug()
+//Свои скрипты присылайте по адресу: darksoftware@yandex.ru
