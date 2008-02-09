@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Размер блока копирования б-х файлов, разные диски (Кб) в  Total Commander
+SECTION>Configuration
+TYPE>INI
+PATH>%windir%\wincmd.ini
+VALUENAME>CopyHugeBlockSizeOther
+VALUETYPE>DWord
+DEFAULT>64
+VALUEON>
+VALUEOFF>
+NOTBOOL>1
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

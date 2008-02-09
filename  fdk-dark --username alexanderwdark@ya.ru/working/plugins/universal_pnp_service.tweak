@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Отключить универсальный PnP
+ROOTKEY>HKLM
+PATH>SYSTEM\CurrentControlSet\Services\upnphost
+VALUENAME>Start
+VALUETYPE>DWORD
+DEFAULT>3
+VALUEON>4
+VALUEOFF>3
+NOTBOOL>0
+OS>NT
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

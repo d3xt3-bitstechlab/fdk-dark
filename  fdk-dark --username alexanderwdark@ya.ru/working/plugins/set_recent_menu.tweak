@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>История документов в меню
+ROOTKEY>HKCU
+PATH>SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
+VALUENAME>NoRecentDocsMenu
+VALUETYPE>BIN
+SIZE>4
+DEFAULT>01000000
+VALUEON>00000000
+VALUEOFF>01000000
+NOTBOOL>0
+OS>9x
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48
