@@ -1,6 +1,0 @@
-Формат файла задач
-Имя|Параметр1|Параметр2|Параметр3 ... |ПараметрN
-setpriority| 3
-FindInPath| C:\| *.tmp;*.bak
-runscript|E:\coding\fdcrus\scripts\очистка win98.dav
-exit

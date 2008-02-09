@@ -1,7 +1,0 @@
-ECHOCONFIG
-NTCMDPROMPT
-DOSONLY
-EMM = [A=AltRegSets] [B=BaseSegment] [RAM]
-dos=high, umb
-files=60
-device=%SystemRoot%\system32\himem.sys
