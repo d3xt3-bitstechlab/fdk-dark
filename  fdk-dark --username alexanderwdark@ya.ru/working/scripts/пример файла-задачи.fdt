@@ -1,0 +1,5 @@
+setpriority| 3
+FindInPath| C:\temp| *.tmp;*.bak
+runscript|%fdcdir%\scripts\очистка win98.dav
+sysinfo| c:\si.txt
+exit
