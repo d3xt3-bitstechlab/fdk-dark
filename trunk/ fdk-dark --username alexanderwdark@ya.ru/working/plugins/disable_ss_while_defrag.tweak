@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Отключить заставку при дефрагментации
+ROOTKEY>HKCU
+PATH>SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Defrag\Settings\DisableScreenSaver
+VALUENAME>
+VALUETYPE>String
+DEFAULT>YES
+VALUEON>YES
+VALUEOFF>NO
+NOTBOOL>0
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Невидимость в сети (Network browser)
+ROOTKEY>HKLM
+PATH>System\CurrentControlSet\Services\LanManServer\Parameters
+VALUENAME>Hidden
+VALUETYPE>DWORD
+DEFAULT>0
+VALUEON>1
+VALUEOFF>0
+NOTBOOL>0
+OS>NT
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

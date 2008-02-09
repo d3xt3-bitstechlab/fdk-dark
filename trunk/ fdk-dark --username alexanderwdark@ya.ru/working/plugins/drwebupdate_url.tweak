@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>DrWebUpdate - адрес обновления
+ROOTKEY>HKLM
+PATH>SOFTWARE\IDAVLab\DrWebUpdate\Settings
+VALUENAME>UpdateUrl
+VALUETYPE>STRING
+DEFAULT>http:
+VALUEON>
+VALUEOFF>
+NOTBOOL>1
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

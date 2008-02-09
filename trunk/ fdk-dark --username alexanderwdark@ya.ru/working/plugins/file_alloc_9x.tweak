@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Оптимальный размер размешения (9X)
+ROOTKEY>HKLM
+PATH>System\CurrentControlSet\Control\FileSystem
+VALUENAME>ContigFileAllocSize
+VALUETYPE>DWORD
+DEFAULT>512
+VALUEON>800
+VALUEOFF>512
+NOTBOOL>0
+OS>9x
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

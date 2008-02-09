@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Имя компьютера
+ROOTKEY>HKLM
+PATH>System\CurrentControlSet\Control\ComputerName\ComputerName
+VALUENAME>ComputerName
+VALUETYPE>STRING
+DEFAULT>NONAME
+VALUEON>
+VALUEOFF>
+NOTBOOL>1
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

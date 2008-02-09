@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Выключить скрытые административные шары (Рабочая станция)
+ROOTKEY>HKLM
+PATH>SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
+VALUENAME>AutoShareWks
+VALUETYPE>DWORD
+DEFAULT>1
+VALUEON>0
+VALUEOFF>1
+NOTBOOL>0
+OS>NT
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

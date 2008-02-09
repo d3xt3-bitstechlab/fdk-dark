@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TYPE>REG
+TWEAKNAME>Отключить оконный сеанс MS-DOS (95-ME)
+ROOTKEY>HKCU
+PATH>Software\Microsoft\Windows\CurrentVersion\Policies\WinOldApp
+VALUENAME>Disabled
+VALUETYPE>DWORD
+DEFAULT>0
+VALUEON>1
+VALUEOFF>0
+NOTBOOL>0
+OS>9x
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48
