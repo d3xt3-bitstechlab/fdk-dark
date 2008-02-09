@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Число эскизов в кэше Total Commander
+SECTION>Configuration
+TYPE>INI
+PATH>%windir%\wincmd.ini
+VALUENAME>ThumbnailMemoryLimit
+VALUETYPE>DWord
+DEFAULT>500
+VALUEON>
+VALUEOFF>
+NOTBOOL>1
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

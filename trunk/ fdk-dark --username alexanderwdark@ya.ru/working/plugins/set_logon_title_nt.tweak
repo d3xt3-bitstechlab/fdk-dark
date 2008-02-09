@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Заголовок сообщения при входе в систему (NT)
+ROOTKEY>HKLM
+PATH>SOFTWARE\Microsoft\Windows\CurrentVersion\WinLogOn
+VALUENAME>LegalNoticeCaption
+VALUETYPE>STRING
+DEFAULT>
+VALUEON>
+VALUEOFF>
+NOTBOOL>1
+OS>NT
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

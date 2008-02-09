@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Убрать оверлей .pif
+ROOTKEY>HKLM
+PATH>SOFTWARE\CLASSES\piffile
+VALUENAME>IsShortcut
+VALUETYPE>STRING
+DEFAULT>
+VALUEON>#SYSDELVAL
+VALUEOFF>
+NOTBOOL>0
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

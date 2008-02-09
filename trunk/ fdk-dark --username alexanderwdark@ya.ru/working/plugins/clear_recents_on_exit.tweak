@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Очишать историю документов при выходе
+ROOTKEY>HKCU
+PATH>SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
+VALUENAME>ClearRecentDocsOnExit
+VALUETYPE>Bin
+SIZE>4
+DEFAULT>01000000
+VALUEON>01000000
+VALUEOFF>00000000
+NOTBOOL>0
+OS>9x
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48

@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Фоновая распаковка в  Total Commander
+SECTION>Configuration
+TYPE>INI
+PATH>%windir%\wincmd.ini
+VALUENAME>AlwaysPackInBackground
+VALUETYPE>DWord
+DEFAULT>0
+VALUEON>2
+VALUEOFF>0
+NOTBOOL>0
+
+
+
+// Автоматически сгенерирован FDK, 22.12.2007 / 20:36:48
