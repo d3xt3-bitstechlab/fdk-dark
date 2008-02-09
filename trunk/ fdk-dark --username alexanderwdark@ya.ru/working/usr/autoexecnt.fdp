@@ -1,6 +1,0 @@
-@ECHO
-lh %SystemRoot%\system32\mscdexnt.exe
-lh %SystemRoot%\system32\redir
-lh %SystemRoot%\system32\dosx
-SET BLASTER=A220 I5 D1 P330
-SET BLASTER=A0 
