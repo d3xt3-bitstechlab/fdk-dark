@@ -1,0 +1,8 @@
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+buildstamp.dpr(1) buildstamp.dpr(1) buildstamp.dpr(1) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(6) buildstamp.dpr(8) buildstamp.dpr(20) Warning: Symbol 'faHidden' is specific to a platform
+buildstamp.dpr(20) Warning: Symbol 'faSysFile' is specific to a platform
+buildstamp.dpr(21) Warning: Symbol 'faReadOnly' is specific to a platform
+buildstamp.dpr(21) Warning: Symbol 'faArchive' is specific to a platform
+buildstamp.dpr(110) Error: Missing operator or semicolon
+buildstamp.dpr(122) 
