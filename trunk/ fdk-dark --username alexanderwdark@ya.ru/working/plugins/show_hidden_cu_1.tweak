@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Показывать скрытые файлы (HKCU)
+ROOTKEY>HKCU
+PATH>Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+VALUENAME>Hidden
+VALUETYPE>DWORD
+DEFAULT>1
+VALUEON>1
+VALUEOFF>0
+NOTBOOL>0
+OS>NT
+
+
+
+// Автоматически сгенерирован FDK, 20.02.2008 / 21:03:29

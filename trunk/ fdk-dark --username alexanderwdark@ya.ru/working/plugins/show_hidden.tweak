@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+
+//////                    НИИ DARKSOFTWARE - ПЛАГИН FDK                  ///////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+TWEAKNAME>Показывать скрытые файлы
+ROOTKEY>HKLM
+PATH>SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\Hidden\SHOWALL
+VALUENAME>CheckedValue
+VALUETYPE>DWORD
+DEFAULT>1
+VALUEON>1
+VALUEOFF>0
+NOTBOOL>0
+OS>NT
+
+
+
+// Автоматически сгенерирован FDK, 20.02.2008 / 21:03:29
