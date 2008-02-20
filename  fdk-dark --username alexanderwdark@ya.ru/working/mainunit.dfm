@@ -1,6 +1,6 @@
 object FDCMAIN: TFDCMAIN
-  Left = 231
-  Top = 205
+  Left = 541
+  Top = 219
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   ClientHeight = 329
@@ -26,7 +26,7 @@ object FDCMAIN: TFDCMAIN
     Top = 24
     Width = 498
     Height = 240
-    ActivePage = TabSheet36
+    ActivePage = TabSheet11
     Align = alBottom
     HotTrack = True
     ParentShowHint = False
@@ -145,7 +145,7 @@ object FDCMAIN: TFDCMAIN
         Width = 161
         Height = 21
         Color = clWhite
-        ItemHeight = 13
+        ItemHeight = 0
         TabOrder = 7
         Text = 'C:\'
       end
@@ -174,7 +174,7 @@ object FDCMAIN: TFDCMAIN
         Height = 21
         Style = csDropDownList
         Color = clWhite
-        ItemHeight = 13
+        ItemHeight = 0
         ParentShowHint = False
         ShowHint = True
         TabOrder = 10
@@ -700,7 +700,7 @@ object FDCMAIN: TFDCMAIN
         Top = 0
         Width = 489
         Height = 209
-        ActivePage = TabSheet14
+        ActivePage = TabSheet28
         Style = tsButtons
         TabOrder = 0
         OnChange = pc3Change
@@ -979,6 +979,7 @@ object FDCMAIN: TFDCMAIN
             ItemHeight = 13
             TabOrder = 5
             OnClick = cheatsSelect
+            OnDblClick = cheatsDblClick
           end
           object radio: TRadioGroup
             Left = 0
@@ -1313,7 +1314,7 @@ object FDCMAIN: TFDCMAIN
               Height = 21
               Style = csDropDownList
               Color = clWhite
-              ItemHeight = 0
+              ItemHeight = 13
               TabOrder = 0
               OnSelect = abpresetSelect
             end

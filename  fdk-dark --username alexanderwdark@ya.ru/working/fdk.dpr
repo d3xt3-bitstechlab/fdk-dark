@@ -133,7 +133,7 @@ begin
   Mem := TMem.Create;
   Application.CreateForm(TFDCMAIN, FDCMAIN);
   Application.CreateForm(TView, View);
-  FDCMain.Caption := 'FDK А.Дарка [' + BuildStr + ']';
+  FDCMain.Caption := 'FDK ..:::Оптимизатор ПК:::.. [' + BuildStr + ']';
   try
     Application.Run;
   finally

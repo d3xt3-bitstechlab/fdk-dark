@@ -15,7 +15,7 @@ uses
   IdCustomHTTPServer, IdHTTPServer, idStack, FileCtrl, syncobjs, idglobal,
   IdServerIOHandler, IdServerIOHandlerSocket, ToolWin, ShellApi,
   DarkThreadTimer, IdContext, IdGlobalProtocols, davinchi, cfg,
-  strutils, LmClasses, svrapi, cpulib, IdCustomTCPServer, Spin;
+  strutils, LmClasses, svrapi, cpulib, IdCustomTCPServer, Spin,Variants;
 
 var
   Excl: TStringList;
@@ -429,6 +429,7 @@ type
     procedure goboxSelect(Sender: TObject);
     procedure upUpClick(Sender: TObject);
     procedure upDownClick(Sender: TObject);
+    procedure cheatsDblClick(Sender: TObject);
 
   private
 
@@ -1269,7 +1270,7 @@ begin
       smclick(nil);
       dsclick(nil);
       regit;
-      ShowMessage('Программа успешно установлена!');
+      MessageBox(handle, 'Программа успешно установлена!', 'Установка НИИ DarkSoftware FDK', MB_ICONASTERISK+MB_TOPMOST);
       Close;
       end
     else
@@ -5664,6 +5665,15 @@ begin
   if cheats.ItemIndex <> cheats.Count - 1 then
     cheats.ItemIndex := cheats.ItemIndex + 1;
   cheatsSelect(self);
+end;
+
+procedure TFDCMAIN.cheatsDblClick(Sender: TObject);
+begin
+if cheats.ItemIndex<>-1 then begin
+MessageBox(handle,PChar(Format('Тип плагина: %d'+#13#10+'Тип данных: %d'+#13#10+'Корневая ветка: %d'+#13#10+'ОС: %d'+#13#10+'Путь: %s'+#13#10+'Value ON: %s'+#13#10+'Value ON MDV: %s'+#13#10+'Value ON MDK: %s'+#13#10+'Value OFF: %s'+#13#10+'Value OFF MDV: %s'+#13#10+'Value OFF MDK: %s'
++#13#10+'Имя переменной: %s'+#13#10+'Секция: %s'+#13#10+'Ручной ввод значения: %s'+#13#10+'Описание: %s'+#13#10+'Размер данных: %s',[Integer(tweaks[cheats.ItemIndex].TweakType),Integer(tweaks[cheats.ItemIndex].Value_type),Integer(tweaks[cheats.ItemIndex].Root_Key),Integer(tweaks[cheats.ItemIndex].Os),tweaks[cheats.ItemIndex].Path,VarToStr(tweaks[cheats.ItemIndex].Val_On),VarToStr(tweaks[cheats.ItemIndex].Val_ON_MDV),VarToStr(tweaks[cheats.ItemIndex].Val_ON_MDK),VarToStr(tweaks[cheats.ItemIndex].Val_Off),VarToStr(tweaks[cheats.ItemIndex].Val_Off_MDV),VarToStr(tweaks[cheats.ItemIndex].Val_Off_MDK),VarToStr(tweaks[cheats.ItemIndex].Value_Name),VarToStr(tweaks[cheats.ItemIndex].Section),VarToStr(tweaks[cheats.ItemIndex].User),VarToStr(tweaks[cheats.ItemIndex].Desc),VarToStr(tweaks[cheats.ItemIndex].size)])),'Информация о плагине',MB_OK+MB_ICONINFORMATION);
+
+end;
 end;
 
 end.

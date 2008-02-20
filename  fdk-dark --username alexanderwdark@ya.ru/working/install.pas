@@ -106,7 +106,7 @@ begin
     exit;
   end;
   copyfile(PChar(ParamStr(0)), PChar(edit1.Text + 'fdk.exe'), False);
-  ShowMessage('Внимательно ознакомтесь с кратким описанием продукта и особенностями его использования.');
+  MessageBox(handle,'Внимательно ознакомьтесь с кратким описанием продукта и особенностями его использования.','Установка FDK ...::: Оптимизация ПК :::...',MB_ICONWARNING+MB_TOPMOST);
   extractres('README', 'I', tempdir + 'Руководство.txt');
   RunAndWait('notepad ' + tempdir + 'Руководство.txt');
   deletefileadv(tempdir + 'Руководство.txt');
@@ -116,7 +116,7 @@ begin
     RunAndWait(edit1.Text + 'fdk.exe -install');
     statictext3.OnClick := nil;
     statictext5.Caption := 'Готово';
-    ShowMessage('Программа установлена! Спасибо за использование продуктов НИИ DarkSoftware!');
+    MessageBox(handle,'Программа установлена! Спасибо за использование продуктов НИИ DarkSoftware!','Установка программы FDK',MB_OK+MB_ICONINFORMATION+MB_TOPMOST);
   end
   else
     ShowMessage('Продолжение устновки возможно лишь при согласии с условиями использования программы.');
