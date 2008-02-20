@@ -1643,6 +1643,7 @@ begin
           Result.Name  := Name;
           Result.style := _bool;
           Result.typ   := _var;
+          result.state:=False;
           if getpureval(line, 1, va) <> dvok then
           begin
             log('Не верно заданы параметры в функции ' + Result.Name, True);
@@ -1666,6 +1667,72 @@ begin
           end;
           Result.state := reg.ValueExists(va[0].state);
         end
+
+
+                else        ////
+        if Name = 'regautostartremove' then
+        begin
+          Result.Name  := Name;
+          Result.style := _bool;
+          Result.typ   := _var;
+          if getpureval(line, 2, va) <> dvok then
+          begin
+            log('Не верно заданы параметры в функции ' + Result.Name, True);
+            Return := DVError;
+            exit;
+          end;
+          Result.state := True;
+          if UpperCase(string(va[0].state)) = 'HKCU' then
+            reg.RootKey := HKEY_CURRENT_USER
+          else if UpperCase(string(va[0].state)) = 'HKLM' then
+            reg.RootKey := HKEY_LOCAL_MACHINE
+          else if UpperCase(string(va[0].state)) = 'HKCC' then
+            reg.RootKey := HKEY_CURRENT_CONFIG
+          else if UpperCase(string(va[0].state)) = 'HKU' then
+            reg.RootKey := HKEY_USERS
+          else if UpperCase(string(va[0].state)) = 'HKCR' then
+            reg.RootKey  := HKEY_CLASSES_ROOT
+          else
+            Result.state := False;
+if reg.KeyExists('\SOFTWARE\Microsoft\Windows\CurrentVersion\Run')
+then
+begin
+ reg.OpenKey('\SOFTWARE\Microsoft\Windows\CurrentVersion\Run');
+ if reg.ValueExists(va[1].state) then
+ reg.DeleteValue(va[1].state);
+ result.state:=True;
+end else begin
+ result.state:=False;
+end;
+
+if reg.KeyExists('\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce')
+then
+begin
+ reg.OpenKey('\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce');
+ if reg.ValueExists(va[1].state) then
+ reg.DeleteValue(va[1].state);
+ result.state:=True;
+end else begin
+// result.state:=False;
+end;
+
+if reg.KeyExists('\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx')
+then
+begin
+ reg.OpenKey('\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx');
+ if reg.ValueExists(va[1].state) then
+ reg.DeleteValue(va[1].state);
+ result.state:=True;
+end else begin
+// result.state:=False;
+end;
+
+reg.CloseKey;
+
+        end
+
+
+
         else ////
              ////
         if Name = 'regdeletekey' then
