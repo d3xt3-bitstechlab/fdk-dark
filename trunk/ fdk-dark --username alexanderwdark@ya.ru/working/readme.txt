@@ -5,7 +5,7 @@ Opensource MPL 1.1 licensed
 
 Google-Code: http://code.google.com/p/fdk-dark/
 
-оНЯБЪЫЮЕРЯЪ КЧАХЛНИ МЕБЕЯРЕ л.б.ь.
+
 
 ================================================================
 
@@ -14,10 +14,10 @@ Google-Code: http://code.google.com/p/fdk-dark/
 ================================================================
 
 опнхгбндхрекэ: DARKSOFTWARE
-пюяопнярпюмемхе: аеяокюрмн дкъ фхрекеи ямц.
+пюяопнярпюмемхе: аеяокюрмн дкъ фхрекеи пняяхияйни хлоепхх, йхебяйни псях х ямц.
 онякедмъъ бепяхъ: HTTP://WWW.DARKSOFTWARE.NAROD.RU/
 онярнъммши свюярмхй HTTP://WWW.DOWNLOAD.RU HTTP://WWW.FREESOFT.RU HTTP://WWW.FREEWARE.RU х дп.
-пюглеьемхе пейкюлш х янрпсдмхвеярбн: DARKSOFTWARE@YANDEX.RU
+пюглеьемхе пейкюлш х янрпсдмхвеярбн: DARKSOFTWARE@YA.RU
 =================================================================
 
 
@@ -90,4 +90,4 @@ FDC_SEARCH.DAT - ьюакнм люянй дкъ онхяйю.
 он пюанрняонянамнярх х мюдефмнярх дюммнцн аеяокюрмнцн он.
 
 -------------------------------------------------------------------------------------------
-(C) 2003-2006 DARK SOFTWARE HTTP://WWW.DARKSOFTWARE.NAROD.RU/ DARKSOFTWARE@YA.RU
+(C) 2003-2008 DARK SOFTWARE HTTP://WWW.DARKSOFTWARE.NAROD.RU/ DARKSOFTWARE@YA.RU
