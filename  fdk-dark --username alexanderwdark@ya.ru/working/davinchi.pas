@@ -675,6 +675,49 @@ var
   end;
 
 
+    function OneDirectoryByExtNR(APath: string): boolean;
+  var
+    SR:      TSearchRec;
+    ignored: boolean;
+  begin
+    ignored := False;
+    if findfirst(APath + '\*.*', faReadOnly + faHidden + faSysFile +
+      faArchive + faDirectory, SR) = 0 then
+      repeat
+        if (SR.Attr and faDirectory <> 0) then
+        begin
+{------------------------------------------------------}
+        end
+        else if (ExtractFileExt(sr.Name) <> '') and
+          (ex.IndexOf(ExtractFileExt(sr.Name)) <> -1) then
+        begin
+
+          if not deletefile(PChar(apath + '\' + sr.Name)) then
+          begin
+            ignored := True;
+            log('Не могу удалить: ' + sr.Name + '!', True);
+          end
+          else
+            log('Удален: ' + sr.Name, False);
+
+        end
+        else
+          ignored := True;
+
+      until findnext(SR) <> 0;
+    SysUtils.FindClose(sr);
+    if (not ignored) and directoryexists(apath) and
+      (not isinexcl(apath) and (allowdir)) then
+    begin
+      if removedir(PChar(apath)) then
+        log('Удален каталог: ' + apath, False)
+      else
+        log('Не могу удалить каталог: ' + apath + '!', True);
+    end;
+    Result := not ignored;
+  end;
+
+
   function OneDirectoryAge(APath, Ext: string; age: integer): boolean;
   var
     SR: TSearchRec;
@@ -1216,6 +1259,28 @@ begin
           ex.Free;
           Result.state := True;
         end
+        else if Name = 'erasethisextnotreq' then
+        begin
+
+          Result.Name  := Name;
+          Result.style := _bool;
+          Result.typ   := _var;
+          if getpureval(line, 2, va) <> dvok then
+          begin
+            log('Не верно заданы параметры в функции ' + Result.Name, True);
+            Return := DVError;
+            exit;
+          end;
+          Result.state := True;
+          s  := va[0].state;
+          ex := TStringList.Create;
+          for i := 2 to integer(va[1].state) + 2 do
+            ex.Add(string(va[i].state));
+          OneDirectoryByExtNR(SysUtils.ExcludeTrailingBackslash(va[0].state));
+          ex.Free;
+          Result.state := True;
+        end
+
         else if Name = 'eraseallfiles' then
         begin
           Result.Name  := Name;
@@ -1419,13 +1484,13 @@ begin
           Result.state := True;
           if UpperCase(string(va[0].state)) = 'HKCU' then
             reg.RootKey := HKEY_CURRENT_USER
-          else if lowercase(string(va[0].state)) = 'HKLM' then
+          else if UpperCase(string(va[0].state)) = 'HKLM' then
             reg.RootKey := HKEY_LOCAL_MACHINE
-          else if lowercase(string(va[0].state)) = 'HKCC' then
+          else if UpperCase(string(va[0].state)) = 'HKCC' then
             reg.RootKey := HKEY_CURRENT_CONFIG
-          else if lowercase(string(va[0].state)) = 'HKU' then
+          else if UpperCase(string(va[0].state)) = 'HKU' then
             reg.RootKey := HKEY_USERS
-          else if lowercase(string(va[0].state)) = 'HKCR' then
+          else if UpperCase(string(va[0].state)) = 'HKCR' then
             reg.RootKey  := HKEY_CLASSES_ROOT
           else
             Result.state := False;
@@ -1462,6 +1527,23 @@ begin
           Result.state := True;
           reg.WriteInteger(va[0].state, va[1].state);
         end
+        else ////
+             ////
+        if Name = 'regdeletevalue' then
+        begin
+          Result.Name  := Name;
+          Result.style := _bool;
+          Result.typ   := _var;
+          if getpureval(line, 1, va) <> dvok then
+          begin
+            log('Не верно заданы параметры в функции ' + Result.Name, True);
+            Return := DVError;
+            exit;
+          end;
+          Result.state := True;
+          reg.DeleteValue(va[0].state);
+        end
+
         else ////
 
         if Name = 'setntservicestate' then
@@ -1598,23 +1680,8 @@ begin
             exit;
           end;
           Result.state := reg.DeleteKey(va[0].state);
-        end
-        else ////
-             ////
-        if Name = 'regdeletevalue' then
-        begin
-          Result.Name  := Name;
-          Result.style := _bool;
-          Result.typ   := _var;
-          if getpureval(line, 1, va) <> dvok then
-          begin
-            log('Не верно заданы параметры в функции ' + Result.Name, True);
-            Return := DVError;
-            exit;
-          end;
-          Result.state := reg.DeleteValue(va[0].state);
-        end
-        else;
+        end;
+        
         ////
       end;
 
